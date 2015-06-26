@@ -36,7 +36,10 @@ int main()
 	cudaMemcpy(d_b, b, SIZE*sizeof(int), cudaMemcpyHostToDevice);
 	cudaMemcpy(d_c, c, SIZE*sizeof(int), cudaMemcpyHostToDevice);
 
-	VectorAdd<<<SIZE,1>>>(d_a, d_b, d_c);
+	dim3 dimblock(SIZE,1,1);
+	dim3 dimGrid(1,1,1);
+
+	VectorAdd<<< dimblock,dimGrid >>>(d_a, d_b, d_c);
 
 	cudaMemcpy(c, d_c, SIZE*sizeof(int), cudaMemcpyDeviceToHost);
 
