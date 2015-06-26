@@ -59,10 +59,10 @@ int main()
 	}
 	
 	LlenarM(f, c, m);
-	ShowM(f, c, m);
+	//ShowM(f, c, m);
 	
 	LlenarM(f1, c1, n);
-	ShowM(f1, c1, n);
+	//ShowM(f1, c1, n);
 	
 	if(c == f1)
 	{
